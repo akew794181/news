@@ -1,0 +1,49 @@
+<div class="row" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="col-xs-12 col-md-12">
+        <div class="widget">
+            <div class="widget-body no-padding">
+                <table class="table table-bordered table-hover table-striped" id="searchable">
+                    <thead class="bordered-darkorange">
+                    <tr role="row">
+                        <th>ID</th>
+                        <th>名称</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th rowspan="1" colspan="1"><input type="text" name="search_engine" placeholder="Search engines" class="ID"></th>
+                            <th rowspan="1" colspan="1"><input type="text" name="search_browser" placeholder="Search browsers" class="名称"></th>
+                            <th rowspan="1" colspan="1"></th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr th:each="user:${list}">
+                            <td th:text="${user.id}"></td>
+                            <td th:text="${user.name}"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default" onclick="save()"><i class="glyphicon glyphicon-edit"></i>编辑</button>
+                                    <button type="button" class="btn btn-default"><i class="fa fa-times"></i>删除</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    InitiateSearchableDataTable.init();
+    $(".DTTT").hide();
+    function save() {
+        layer.open({
+            type: 1,
+            skin: 'layui-layer-rim', //加上边框
+            area: ['420px', '240px'], //宽高
+            content: 'html内容'
+        });
+    }
+
+</script>
