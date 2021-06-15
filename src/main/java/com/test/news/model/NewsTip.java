@@ -17,6 +17,6 @@ public class NewsTip {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;//id
-    private String newsId;//newsid
+    private Integer newsId;//newsid
     private String tip;//分词
 }

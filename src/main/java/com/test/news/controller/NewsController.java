@@ -37,7 +37,7 @@ public class NewsController {
 
     @RequestMapping("savePage.htm")
     public String save(Model model,News news)throws Exception{
-        newsService.save(news);
+//        newsService.save(news);
         return newsList(model);
     }
 
